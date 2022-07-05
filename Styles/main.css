@@ -125,23 +125,23 @@ section.cards .card.card:nth-child(4) {
 section.cards .card.card:nth-child(5) {
   background-color: white;
 }
-section.cards .card .person-img-name {
+section.cards .card .person-info {
   display: flex;
   gap: 1.5em;
   align-items: center;
   z-index: 1;
 }
-section.cards .card .person-img-name img {
+section.cards .card .person-info img {
   border-radius: 50%;
   width: 40px;
   height: 40px;
   border: 2px solid white;
 }
-section.cards .card .person-img-name > div span {
+section.cards .card .person-info > div span {
   display: block;
   font-size: 0.9rem;
 }
-section.cards .card > p.main-paragraph {
+section.cards .card > h1.main-header {
   color: white;
   font-weight: 700;
   font-size: 1.2rem;

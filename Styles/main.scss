@@ -133,7 +133,7 @@ section.cards {
       }
     }
 
-    .person-img-name {
+    .person-info {
       display: flex;
       gap: 1.5em;
       align-items: center;
@@ -153,7 +153,7 @@ section.cards {
     }
 
 
-    >p.main-paragraph {
+    >h1.main-header {
       color: white;
       font-weight: 700;
       font-size: 1.2rem;
