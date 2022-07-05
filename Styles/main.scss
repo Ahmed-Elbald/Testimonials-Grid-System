@@ -47,10 +47,10 @@ img {
 body {
   text-transform: capitalize;
   font-family: 'Barlow Semi Condensed', sans-serif;
-  line-height: 1.8;
+  line-height: 1.2;
   background-color: $lightGrayishBlue;
   min-height: 100vh;
-  padding: 5em 0;
+  padding: 2em 0;
   @include flex-centering;
 }
 
@@ -74,10 +74,10 @@ span.degree {
 section.cards {
 
   .container {
-    @include min-mq(1350px) {
+    @include min-mq(1200px) {
       display: grid;
       grid-template-rows: repeat(2, auto);
-      grid-template-columns: repeat(4, 300px);
+      grid-template-columns: repeat(4, 250px);
       gap: 2em;
       margin: 0;
 
