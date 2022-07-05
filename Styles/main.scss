@@ -1,0 +1,183 @@
+// Imprted files
+
+@use "../Styles/VM.scss" as *;
+
+// Global
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $moderateViolet;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $darkGrayishBlue;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body {
+  text-transform: capitalize;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  line-height: 1.8;
+  background-color: $lightGrayishBlue;
+  min-height: 100vh;
+  padding: 5em 0;
+  @include flex-centering;
+}
+
+i,
+a,
+button {
+  cursor: pointer;
+}
+
+.container {
+  margin: auto;
+  padding: 0 1em;
+}
+
+.fadded-text,
+span.degree {
+  color: $lightGray;
+}
+
+
+section.cards {
+
+  .container {
+    @include min-mq(1350px) {
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: repeat(4, 300px);
+      gap: 2em;
+      margin: 0;
+
+      .card {
+        margin-bottom: 0;
+      }
+
+      .card:nth-child(1) {
+        grid-column: span 2;
+      }
+
+      .card:nth-child(5) {
+        grid-row: span 2;
+      }
+
+      .card:nth-child(3) {
+        grid-row: 2;
+      }
+
+      .card:nth-child(4) {
+        grid-column: 2 / 4;
+        grid-row: 2;
+      }
+    }
+  }
+
+  .card {
+    position: relative;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    @include prefix(border-radius, 10px);
+    @include flex-column-gap(1.5em);
+    color: white;
+
+    img.quotes {
+      position: absolute;
+      top: 0;
+      right: 10%;
+    }
+
+    $colors: $moderateViolet,
+      $darkGrayishBlue,
+      $white,
+      $darkBlackishBlue,
+      $white;
+
+    $i: 1;
+
+    @each $color in $colors {
+      &.card:nth-child(#{$i}) {
+        background-color: $color;
+        $i: $i +1;
+      }
+    }
+
+    .person-img-name {
+      display: flex;
+      gap: 1.5em;
+      align-items: center;
+      z-index: 1;
+
+      img {
+        @include circle(40px);
+        border: 2px solid white;
+      }
+
+      >div {
+        span {
+          display: block;
+          font-size: .9rem;
+        }
+      }
+    }
+
+
+    >p.main-paragraph {
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    >blockquote.fadded-text {
+      font-size: .9rem;
+    }
+
+    &.light {
+
+      img {
+        border-color: $moderateViolet;
+      }
+
+      span.name,
+      p.main-paragraph {
+        color: $darkGrayishBlue;
+      }
+
+      span.degree,
+      blockquote.fadded-text {
+        color: $darkGray;
+      }
+    }
+  }
+}
