@@ -145,6 +145,7 @@ section.cards .card > p.main-paragraph {
   color: white;
   font-weight: 700;
   font-size: 1.2rem;
+  z-index: 1;
 }
 section.cards .card > blockquote.fadded-text {
   font-size: 0.9rem;
